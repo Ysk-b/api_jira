@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'password')
-        extra_kwargs = {'password': {'write_only ': True, 'required': True}}
+        extra_kwargs = {'password':{'write_only': True, 'required': True}}
 
     # 今回、passwordをハッシュ化して返すというカスタム処理を追加しているので、createメソッドをオーバーライドする必要がある
     def create(self, validated_data):
