@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from .models import Task, Category, Profile
 from django.contrib.auth.models import User
 from . import custompermissions
-
 class CreateUserView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = (permissions.AllowAny,)
