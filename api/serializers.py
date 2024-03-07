@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'img')
+        fields = ('id', 'username', 'password')
         extra_kwargs = {'password': {'write_only ': True, 'required': True}}
 
     # 今回、passwordをハッシュ化して返すというカスタム処理を追加しているので、createメソッドをオーバーライドする必要がある
